@@ -4,18 +4,21 @@ import com.cars.VO.JsonResult;
 import com.cars.VO.ResultStatusConstant;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author zhangyq
+ * @version
+ */
 @RestController
 @EnableAutoConfiguration
 public class LoginController {
     /**
      * 登录
-     *
+     * Post请求
      * @param userId   用户ID
      * @param password 加密的密码
      * @return

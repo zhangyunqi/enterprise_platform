@@ -7,13 +7,26 @@ import javax.persistence.Table;
 
 /**
  * Person
+ * 数据库zyqtest.person表
+ * @author zhangyq
+ * @see java.io.Serializable
+ * @version 1.0
  */
 @Entity
 @Table(name = "person", catalog = "zyqtest")
 public class Person implements java.io.Serializable {
 
+    /**
+     * 主键-guid
+     */
     private String guid;
+    /**
+     * 姓名-name
+     */
     private String name;
+    /**
+     * 年龄-age
+     */
     private Integer age;
 
     public Person() {
