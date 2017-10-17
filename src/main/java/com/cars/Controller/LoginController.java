@@ -2,11 +2,16 @@ package com.cars.Controller;
 
 import com.cars.VO.JsonResult;
 import com.cars.VO.ResultStatusConstant;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+@EnableAutoConfiguration
 public class LoginController {
     /**
      * 登录
