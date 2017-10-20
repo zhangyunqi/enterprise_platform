@@ -5,6 +5,7 @@ import com.cars.Mapper.PersonMapper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -19,6 +20,8 @@ import static org.junit.Assert.*;
 public class PersonRepositoryTest {
     @Autowired
     PersonRepository personRepository;
+    @Autowired
+    PersonMapper personMapper;
     Person person;
 
     @Before
@@ -33,6 +36,14 @@ public class PersonRepositoryTest {
     public void findById(){
         personRepository.save(person);
         assertTrue(personRepository.findOne(person.getGuid()).getGuid().equals("1"));
+    }
+    @Test
+    public void findPersonById(){
+        assertTrue(personMapper.findPersonById("2").getGuid().equals("2"));
+    }
+    @Test
+    public void findPersonNameAndAgeById(){
+        assertTrue((Long)personMapper.findPersonNameAndAgeById("2").get("age")==3);
     }
 
 }
